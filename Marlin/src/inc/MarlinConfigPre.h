@@ -36,6 +36,12 @@
 
 #include "../core/macros.h"
 #include "../core/boards.h"
+
+// DIY_PRUSA_MINI files
+#include "../../DIY_Prusa_Mini_Configuration.h"
+#include "DIY_Prusa_Mini_SanityCheck.h"
+#include "DIY_Prusa_Mini_Conditionals.h"
+
 #include "../../Configuration.h"
 
 #ifdef CUSTOM_VERSION_FILE
