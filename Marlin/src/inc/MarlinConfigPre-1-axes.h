@@ -20,6 +20,7 @@
  *
  */
 #pragma once
+#define DIY_PRUSA_MINI_VERSION 20241019
 
 #ifndef __MARLIN_FIRMWARE__
 #define __MARLIN_FIRMWARE__
@@ -41,6 +42,11 @@
 #include "../core/boards.h"
 
 #if USE_STD_CONFIGS
+  // DIY_PRUSA_MINI files
+  #include "../../DIY_Prusa_Mini_Configuration.h"
+  #include "DIY_Prusa_Mini_SanityCheck.h"
+  #include "DIY_Prusa_Mini_Conditionals.h"
+
   #include "../../Configuration.h"
 #endif
 

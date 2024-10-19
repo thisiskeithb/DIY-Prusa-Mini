@@ -96,7 +96,7 @@ if pioutil.is_pio_build():
         # Make sure board is compatible with the build environment. Skip for _test,
         # since the board is manipulated as each unit test is executed.
         if not result and build_env != "linux_native_test":
-            err = "Error: Build environment '%s' is incompatible with %s. Use one of these environments: %s" % \
+            err = "Error: Build environment '%s' is incompatible with %s. Set default_envs in platformio.ini to one of these environments: %s" % \
                   ( build_env, motherboard, ", ".join([ e[4:] for e in board_envs if e.startswith("env:") ]) )
             raise SystemExit(err)
 
@@ -130,6 +130,11 @@ if pioutil.is_pio_build():
         #
         if 'EEPROM_INIT_NOW' in env['MARLIN_FEATURES']:
             rm_ofile("module", "settings")
+
+        #
+        # Give DIY Prusa Mini warnings on every build
+        #
+        rm_ofile("inc", "DIY_Prusa_Mini_Warnings")
 
         #
         # Check for old files indicating an entangled Marlin (mixing old and new code)
